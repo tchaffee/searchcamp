@@ -12,7 +12,7 @@
     <script>
         window.fbAsyncInit = function() {
           FB.init({
-            appId      : '[TODO: YOUR APP ID GOES HERE]', // App ID
+            appId      : '129847677222230', // App ID
             status     : true, // check login status
             cookie     : true, // enable cookies to allow the server to access the session
             xfbml      : true  // parse XFBML
