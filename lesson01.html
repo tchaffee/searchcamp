@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<!-- Facebook will give you some code for the head section that you will need
+     to paste here 
+-->
+
+<body>
+    <div id="fb-root"></div>
+
+    <script>
+        // Initialize Facebook
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '357439077684504', // App ID
+              status     : true, // check login status
+              cookie     : true, // enable cookies to allow the server to access the session
+              xfbml      : true  // parse XFBML
+            });
+        };
+
+        // Load the Facebook SDK Asynchronously
+        (function(d){
+          var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+          js = d.createElement('script'); js.id = id; js.async = true;
+          js.src = "//connect.facebook.net/en_US/all.js";
+          d.getElementsByTagName('head')[0].appendChild(js);
+        }(document));
+    </script>
+
+    <script type="text/javascript">
+        function postAttend() {
+            
+            // Facebook will give you the graph api code to paste here.
+            FB.api('/me/...rest of url goes here...',
+                'post',
+                postAttendCallback
+            );
+        }
+    
+        function postAttendCallback(response) {
+            if (!response || response.error) {
+                alert('Error occured');
+                console.log(response.error);
+            }
+            else {
+                alert('Post was successful! Action ID: ' + response.id);
+            }
+        }
+    </script>
+
+    <div>
+        <img src="ga-logo.png">
+    </div>
+    
+    <h3>SPD Lessons</h3>
+    
+    <p>SPD Lesson 1<p>
+
+    <button onclick="postAttend()">Attend</button>
+
+</body>
+</html>
