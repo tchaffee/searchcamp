@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
-<!-- Facebook will give you some code for the head section that you will need
-     to paste here 
--->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# searchcamptc: http://ogp.me/ns/fb/searchcamptc#">
+	<meta property="fb:app_id" content="129847677222230" /> 
+	<meta property="og:type"   content="searchcamptc:lesson" /> 
+	<meta property="og:url"    content="http://bluecrow.biz:49085/lesson-01.html" /> 
+	<meta property="og:title"  content="Lesson 1" /> 
+	<meta property="og:image"  content="http://bluecrow.biz:49085/searchcamp.png" /> 
+</head>
 
 <body>
     <div id="fb-root"></div>
@@ -32,8 +36,11 @@
         function postAttend() {
             
             // Facebook will give you the graph api code to paste here.
-            FB.api('/me/...rest of url goes here...',
+            FB.api('/me/searchcamptc:attend',
                 'post',
+				{
+				    lesson: "http://bluecrow.biz:49085/lesson-01.html"
+				},                
                 postAttendCallback
             );
         }
